@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>IEEE CIS UNI</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gupter:wght@400;500;700&family=Noto+Serif+Tibetan:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.css">
+    <!-- EVENTOS -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"> <!-- NUESTRO EQUIPO -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/b408879b64.js" crossorigin="anonymous"></script> <!-- CONTACTO  -->
+
+
+    <!-- ---- Toastify ------- -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <!-- ---- LOGIN ------- -->
+    <script src="./js/app.js" type="module"></script>
+</head>
+
+<body>
+
+    <header class="encabezado" id="Pagina_Inicio">
+        <div class="sub-encabezado logged-out">
+        </div>
+        <div class="contenedor-navegacion">
+            <div class="contenido-navegacion contenedor">
+                <!-- <div class="logo">
+                    <h2>IEEE <span class="celeste">C</span><span class="celeste">I</span><span class="celeste">S</span>
+                        <span class="rojo"> U</span>N<span class="rojo">I</span>
+                    </h2>
+                </div> -->
+                <div class="Logo">
+                    <img src="assets/Logo/Logo-chico.png" alt="Logo del IEEE CIS UNI">
+                </div>
+                <nav class="navegacion ocultar">
+                    <a href="index.html#Nosotros" class="logged-in">Sobre Nosotros</a>
+                    <a href="index.html#Nuestro-Equipo" class="logged-in">Nuestro Equipo</a>
+                    <a href="index.html#CURSO" class="logged-in">Cursos</a>
+                    <a href="index.html#EVENTOS" class="logged-in">Eventos</a>
+                    <a href="index.html#CONTACTO" class="logged-in">Contacto</a>
+                    <!-- <button class="btnLogin-popup logged-in" id="logout"> Salir</button> -->
+                </nav>
+                <div class="lineas logged-in">
+                    <span></span><span></span><span></span>
+                </div>
+                <button class="btnLogin-popup logged-out">Login</button>
+
+            </div>
+        </div>
+        <div class="contenedor-navegacion-2">
+            <div class="Logo">
+                <img src="assets/Logo/Logo-chico.png" alt="Logo del IEEE CIS UNI">
+            </div>
+            <nav class="navigation">
+                <a href="index.html#Nosotros" class="logged-in">Nosotros</a>
+                <a href="index.html#Nuestro-Equipo" class="logged-in">Equipo</a>
+                <a href="index.html#CURSO" class="logged-in">Cursos</a>
+                <a href="index.html#EVENTOS" class="logged-in">Eventos</a>
+                <a href="index.html#CONTACTO" class="logged-in">Contacto</a>
+                <button class="btnLogin-popup logged-out">Login</button>
+                <!--  Colocamos el id logout para conectarlo con un evento en logout.js -->
+                <button class="btnLogin-popup logged-in" id="logout"> Salir</button>
+            </nav>
+        </div>
+        <div class="contenido-header logged-in">
+            <div class="contenedor-encabezado">
+                <div class="texto-encabezado" width="100%">
+                    <h2 class="Arianna">Innovación con IA</h2>
+                    <p>Impulsando el futuro con Inteligencia Artificial.</p>
+                    <a href="index.html#Nuestro-Equipo" class="btn bordes" height="100vh">Conocenos</a>
+                </div>
+            </div>
+        </div>
+        <div class="wrapper logged-out" id="Formulario-Login-Register">
+            <span class="icon-close">
+                <ion-icon name="close"></ion-icon>
+            </span>
+            <div class="form-box login">
+                <h2>Login</h2>
+                <form class="Login-form" id="login-form">
+                    <div class="input-box-1">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" id="login-email" required>
+                        <label>Email</labe1>
+                    </div>
+                    <div class="input-box-1">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" id="login-password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox">
+                            Remember me</label>
+                        <a href="#">Forgot Password ?</a>
+                    </div>
+                    <button type="submit" class="btn-formulario">Login</button>
+                    <div class="social">
+                        <div class="go" id="googleLogin">
+                            <a href="#" class="fa fa-google"></a>
+                        </div>
+                        <div class="fb" id="facebookLogin">
+                            <a href="#" class="fa fa-facebook"></a>
+                        </div>
+                        <div class="gh" id="githubLogin">
+                            <a href="#" class="fa fa-github"></a>
+                        </div>
+                    </div>
+                    <div class="login-register">
+                        <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                    </div>
+                </form>
+            </div>
+            <div class="form-box register">
+                <h2>Registration</h2>
+                <form class="Signup-Form" id="signup-form">
+                    <div class="input-box-1">
+                        <span class="icon">
+                            <ion-icon name="person"></ion-icon>
+                        </span>
+                        <input type="text" id="signup-name" required>
+                        <label>Username</labe1>
+                    </div>
+                    <div class="input-box-1">
+                        <span class="icon"><ion-icon name="mail"></ion-icon></span>
+                        <input type="email" id="signup-email" required>
+                        <label>Email</labe1>
+                    </div>
+                    <div class="input-box-1">
+                        <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+                        <input type="password" id="signup-password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="remember-forgot">
+                        <label><input type="checkbox">I agree to the terms & conditions</label>
+                        <a href="#">Forgot Password ?</a>
+                    </div>
+                    <button type="submit" class="btn-formulario">Register</button>
+                    <div class="login-register">
+                        <p>Already have an account? <a href="#" class="login-link">Login</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- ---- Toastify ------- -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <!-- ----------Iconos de Ionicons--------   -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <section class="contenedor-nosotros logged-in" id="Nosotros">
+        <div class="container-nosotros grid">
+            <div class="texto-nosotros">
+                <h2>Sobre Nosotros</h2>
+                <div class="subrayado">
+                    <span></span><span></span>
+                </div>
+                <p>En el Capítulo Estudiantil IEEE CIS de la UNI, nos enfocamos en promover el desarrollo de sistemas
+                    computacionales inteligentes y sus aplicaciones. Fomentamos la investigación en inteligencia
+                    artificial, aprendizaje automático y áreas afines, a través de talleres y proyectos colaborativos.
+                    Nuestro objetivo es capacitar a los estudiantes para que lideren la próxima generación de
+                    innovaciones tecnológicas.</p>
+            </div>
+            <figure class="imagen-nosotros">
+                <img src="assets/img/nosotros.jpg" width="100%" alt="Imagen del Club IEEE CIS UNI">
+            </figure>
+        </div>
+    </section>
+    <!-- --------------------- NUESTRO EQUIPO ---------------------  -->
+    <section class="container logged-in" id="Nuestro-Equipo">
+        <h2>Nuestro Equipo</h2>
+        <div class="subrayado">
+            <span></span><span></span>
+        </div>
+        <div class="container-slides swiper">
+            <div class="slider-wrapper">
+                <div class="team swiper-wrapper">
+                    <div class="team-name swiper-slide">
+                        <div class="team-img">
+                            <img src="assets/junta/SaraiAlejandro.jpeg" alt="Foto de Sarai Alejandro">
+                        </div>
+                        <h2>Saraí Alejandro</h2>
+                        <p class="role">Presidenta</p>
+                        <p>
+                            Lidera la directiva y supervisa todas las actividades del capítulo. Representa a la
+                            organización
+                            en
+                            eventos oficiales
+                            y establece la visión y objetivos anuales. Coordina con los demás miembros de la directiva
+                            para
+                            asegurar el cumplimiento
+                            de las metas del capítulo y actúa como enlace principal con la universidad y otros capítulos
+                            IEEE.
+                        </p>
+                    </div>
+                    <div class="team-name swiper-slide">
+                        <div class="team-img">
+                            <img src="assets/junta/Cielho.jpeg" alt="Foto de Cielho">
+                        </div>
+                        <h2>Cielho Alemán</h2>
+                        <p class="role">Vicepresidenta</p>
+                        <p>Apoya a la presidenta en todas sus funciones y asume sus responsabilidades en su ausencia.
+                            Ayuda
+                            en
+                            la planificación y
+                            ejecución de proyectos y actividades, asegurando la colaboración entre diferentes áreas del
+                            capítulo. Fomenta la integración
+                            y motivación de los miembros, asegurando que todas las iniciativas estén alineadas con los
+                            objetivos
+                            del capítulo.
+                        </p>
+                    </div>
+                    <div class="team-name swiper-slide">
+                        <div class="team-img">
+                            <img src="assets/junta/JoaquinContreras.jpeg" alt="Foto de Joaquin Contreras">
+                        </div>
+                        <h2>Joaquín Contreras</h2>
+                        <p class="role">Secretario</p>
+                        <p>Administra toda la documentación del capítulo, incluyendo actas de reuniones, correspondencia
+                            y
+                            archivos oficiales. Se encarga
+                            de la comunicación interna, asegurando que todos los miembros estén informados sobre
+                            reuniones,
+                            eventos y decisiones importantes.
+                            Mantiene registros precisos y organizados de todas las actividades y coordina la logística
+                            de
+                            las
+                            reuniones.</p>
+                    </div>
+                    <div class="team-name swiper-slide">
+                        <div class="team-img">
+                            <img src="assets/junta/SantiagoGutierrez.jpeg" alt="Foto de Santiago">
+                        </div>
+                        <h2>Santiago Gutierrez</h2>
+                        <p class="role">Tesorero</p>
+                        <p>Gestiona los fondos del capítulo, incluyendo la elaboración de presupuestos, informes
+                            financieros
+                            y
+                            la supervisión de ingresos y
+                            gastos. Se asegura de que todas las actividades y proyectos estén financieramente
+                            respaldados y
+                            cumple con las normativas
+                            financieras de IEEE. Trabaja en la obtención de financiamiento y patrocinios para las
+                            iniciativas
+                            del capítulo.</p>
+                    </div>
+                    <div class="team-name swiper-slide">
+                        <div class="team-img">
+                            <img src="assets/junta/DiegoRojas.jpeg" alt="Foto de Diego Rojas">
+                        </div>
+                        <h2>Diego Rojas</h2>
+                        <p class="role">WebMaster</p>
+                        <p>Mantiene y actualiza el sitio web del capítulo, asegurando su funcionalidad y la
+                            disponibilidad
+                            de
+                            información actualizada.
+                            Gestiona el contenido web, incluyendo noticias, eventos y recursos para los miembros.
+                            Trabaja en
+                            la
+                            implementación de nuevas
+                            tecnologías y herramientas digitales para mejorar la presencia en línea del capítulo.</p>
+                    </div>
+                    <div class="team-name swiper-slide">
+                        <div class="team-img">
+                            <img src="assets/junta/JosephRobles.jpeg" alt="Foto de Joseph Robles">
+                        </div>
+                        <h2>Joseph Chuquipiondo</h2>
+                        <p class="role">Director de Capacitaciones</p>
+                        <p> Organiza y coordina talleres, cursos y sesiones de capacitación para los miembros del
+                            capítulo.
+                            Identifica las necesidades de formación y desarrollo profesional de los miembros y trabaja
+                            en la planificación de programas de capacitación que aborden esas necesidades. Facilita el
+                            acceso
+                            a recursos educativos y profesionales.</p>
+                    </div>
+                    <div class="team-name swiper-slide">
+                        <div class="team-img">
+                            <img src="assets/junta/Yahaida.jpeg" alt="Foto de Yahaida">
+                        </div>
+                        <h2>Yahida Apaza</h2>
+                        <p class="role">Directora de Relaciones Públicas</p>
+                        <p>Maneja la imagen pública del capítulo, gestionando la comunicación con medios externos, redes
+                            sociales
+                            y la comunidad en general. Diseña estrategias de comunicación para promover las actividades
+                            y
+                            logros
+                            del capítulo.
+                            Coordina con otros departamentos para asegurar una representación coherente y positiva del
+                            capítulo.
+                        </p>
+                    </div>
+                    <div class="team-name swiper-slide">
+                        <div class="team-img">
+                            <img src="assets/junta/EduardoVillegas.jpeg" alt="Foto de Eduardo Villegas">
+                        </div>
+                        <h2>Eduardo Villegas</h2>
+                        <p class="role">Director de Eventos</p>
+                        <p>Planifica y coordina la logística de eventos y actividades del capítulo, incluyendo
+                            conferencias,
+                            seminarios y talleres.
+                            Se encarga de todos los aspectos organizativos, desde la reserva de espacios hasta la
+                            gestión de
+                            inscripciones
+                            y la coordinación con ponentes y participantes. Asegura que los eventos se desarrollen de
+                            manera
+                            eficiente y exitosa.</p>
+                    </div>
+                    <div class="team-name swiper-slide">
+                        <div class="team-img">
+                            <img src="assets/junta/BenjaminChiggo.jpeg" alt="Foto de Sarai Benjamin">
+                        </div>
+                        <h2>Benjamin Ghiggo</h2>
+                        <p class="role">Director de Proyectos</p>
+                        <p>Lidera la creación, desarrollo y gestión de proyectos técnicos y científicos del capítulo.
+                            Fomenta la participación de los miembros en proyectos innovadores y coordina equipos de
+                            trabajo
+                            para
+                            asegurar
+                            el cumplimiento de los objetivos del proyecto. Promueve la colaboración con otros capítulos
+                            y
+                            organizaciones para
+                            el desarrollo de proyectos conjuntos.</p>
+                    </div>
+                    <div class="team-name swiper-slide">
+                        <div class="team-img">
+                            <img src="assets/junta/MichellMatias.png" alt="Foto de Michell Matias">
+                        </div>
+                        <h2>Michell Matias</h2>
+                        <p class="role">Directora de Marketing</p>
+                        <p>Diseña y ejecuta estrategias de marketing para promocionar las actividades y eventos del
+                            capítulo.
+                            Trabaja en la creación de contenido atractivo y relevante para captar la atención de los
+                            estudiantes
+                            y profesionales.
+                            Utiliza diversas plataformas y medios para aumentar la visibilidad y la participación en las
+                            actividades del capítulo.</p>
+                    </div>
+                    <div class="team-name swiper-slide">
+                        <div class="team-img">
+                            <img src="assets/junta/Oliver.png" alt="Foto de Oliver">
+                        </div>
+                        <h2>Oliver Beizaga</h2>
+                        <p class="role">Subdirector de Marketing</p>
+                        <p>Apoya a la directora de marketing en la implementación de campañas y actividades
+                            promocionales.
+                            Colabora en la creación de contenido y en la gestión de las redes sociales del capítulo.
+                            Aporta ideas y estrategias para mejorar la efectividad de las iniciativas de marketing y
+                            maximizar
+                            su impacto.</p>
+                    </div>
+                    <div class="team-name swiper-slide">
+                        <div class="team-img">
+                            <img src="assets/junta/BrendaAntara.jpeg" alt="Foto de Brenda Antara">
+                        </div>
+                        <h2>Brenda Antara</h2>
+                        <p class="role">Director de Publicidad</p>
+                        <p>Crea material publicitario, incluyendo carteles, folletos y publicaciones en redes sociales,
+                            para promover las actividades del capítulo. Gestiona la distribución de este material,
+                            asegurando una amplia difusión de los eventos y proyectos.
+                            Trabaja en estrecha colaboración con el equipo de marketing para mantener una imagen
+                            coherente y
+                            atractiva del capítulo.</p>
+                    </div>
+                    <div class="team-name swiper-slide">
+                        <div class="team-img">
+                            <img src="assets/junta/Asesor.png" alt="Foto de Asesor Obregon">
+                        </div>
+                        <h2>Máximo Obregón</h2>
+                        <p class="role">Asesor</p>
+                        <p>Proporciona orientación y apoyo estratégico a la directiva, basándose en su experiencia y
+                            conocimiento del capítulo
+                            y sus actividades. Ayuda a resolver problemas y desafíos que puedan surgir y asegura que las
+                            decisiones se alineen
+                            con los objetivos a largo plazo del capítulo. Actúa como mentor para los miembros de la
+                            directiva,
+                            fomentando su
+                            desarrollo profesional y liderazgo.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-slide-button swiper-button-prev"></div>
+            <div class="swiper-slide-button swiper-button-next"></div>
+        </div>
+    </section>
+
+    <!-- ---------------- CURSOS ---------------------- -->
+    <section class="CURSOS logged-in">
+        <div class="imagen-cursos" id="CURSO">
+            <h2>Courses</h2>
+            <h3>FOR OUR WORLD</h3>
+        </div>
+        <section class="container-cursos">
+            <div class="slide-container">
+                <div class="card-wrapper">
+                    <div class="card">
+                        <div class="image-box">
+                            <img src="assets/Cursos/MLE.jpg" alt="Curso de Machine Learning Engineer">
+                            <div class="no-disponibilidad">
+                                <p>Proximamente</p>
+                            </div>
+                        </div>
+                        <div class="profile-details">
+                            <div class="nombre-de-curso">
+                                <p>10 Lessons</p>
+                                <h2>Machine Learning Engineer</h2>
+                            </div>
+                            <img src="assets/Cursos/Jose-Mejia.jpeg" alt="">
+                            <div class="name-job">
+                                <h3 class="name">Jose Mejia</h3>
+                                <h4 class="job">Mechanical Electrical Eng.</h4>
+                            </div>
+                            <div class="buttons">
+                                <a href="#" target='_blank' class="btns btn-1">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="image-box">
+                            <img src="assets/Cursos/Ciencia-Datos-Python.jpg"
+                                alt="Curso de Procesamiento de Imagenes con Matlab">
+                            <div class="disponibilidad">
+                                <p>Disponible</p>
+                            </div>
+                        </div>
+                        <div class="profile-details">
+                            <div class="nombre-de-curso">
+                                <p>12 Lessons</p>
+                                <h2>Data Science with Python</h2>
+                            </div>
+                            <img src="assets/Cursos/Jhony-Jarama.jpeg" alt="">
+                            <div class="name-job">
+                                <h3 class="name">Jhonny Jarama</h3>
+                                <h4 class="job">Full-Stack Developer</h4>
+                            </div>
+                            <div class="buttons">
+                                <a href="https://www.youtube.com/watch?v=kywWseJ6nk4&list=PLm2CuQJaPnriZyrr5s3Fv_wa-FU5cSPzp&pp=iAQB"
+                                    target='_blank' class="btns btn-1">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="image-box">
+                            <img src="assets/Cursos/Procesamiento-Imagenes.png"
+                                alt="Curso de Procesamiento de Imagenes con Matlab">
+                            <div class="disponibilidad">
+                                <p>Disponible</p>
+                            </div>
+                        </div>
+                        <div class="profile-details">
+                            <div class="nombre-de-curso">
+                                <p>9 Lessons</p>
+                                <h2>Image processing in Matlab</h2>
+                            </div>
+                            <img src="assets/Cursos/Eduardo-Fragoso.jpeg" alt="">
+                            <div class="name-job">
+                                <h3 class="name">Eduardo Fragoso</h3>
+                                <h4 class="job">Master in Microelectronics</h4>
+                            </div>
+                            <div class="buttons">
+                                <a href="https://www.youtube.com/playlist?list=PL8pCSD-xWJ1FWCl6yVO4PzVC1iH-vprVM"
+                                    target='_blank' class="btns btn-1">View more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+    <!-- ------------------- EVENTOS -----------------  -->
+    <section class="Eventos logged-in" id="EVENTOS">
+        <div class="Aparecer-Eventos">
+            <div class="title-eventos">
+                <h2>EVENTOS</h2>
+            </div>
+            <div class="blog-slider">
+                <div class="blog-slider__wrp swiper-wrapper">
+                    <div class="blog-slider__item swiper-slide">
+                        <div class="blog-slider__img">
+                            <img src="assets/Eventos/Learn-the-power-of-IA.jpg" alt="">
+                        </div>
+                        <div class="blog-slider__content">
+                            <span class="blog-slider__code">23 March 2024</span>
+                            <div class="blog-slider__title">Learn The Power Of AI is back</div>
+                            <div class="blog-slider__text">Veremos los diferentes usos de la IA Generatiya aplicada a
+                                casos reales sobre Empresas y su aplicación en el mundo. Así tambien exploraremos como
+                                Azure
+                                Cognitive Services esta, transformando la
+                                interaccion entre empresas y clientes. </div>
+                            <a href="https://www.instagram.com/p/C4lvO5DukvK/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D&img_index=1"
+                                target='_blank' class="blog-slider__button">READ MORE</a>
+                        </div>
+                    </div>
+
+                    <div class="blog-slider__item swiper-slide">
+                        <div class="blog-slider__img">
+                            <img src="assets/Eventos/Primera-Reunión.jpg" alt="">
+                        </div>
+                        <div class="blog-slider__content">
+                            <span class="blog-slider__code">4 February 2024</span>
+                            <div class="blog-slider__title">Primera reunión IEEE CIS UNI</div>
+                            <div class="blog-slider__text">Hace algunos días abrimos las puertas a una aventura
+                                fascinante,
+                                y hoy nos llena de alegría dar la bienvenida a todos los voluntarios que se unen a esta
+                                emocionante travesía tecnológica en el periodo 2024. 🌟</div>
+                            <a href="https://www.instagram.com/p/C3NAht1On21/?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D&img_index=1"
+                                target='_blank' class="blog-slider__button">READ MORE</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-slider__pagination"></div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- ------------- CONTACTO --------------------- -->
+
+    <div class="container-contacto logged-in" id="CONTACTO">
+        <div class="contacto">
+            <div class="box-info">
+                <h1>CONTÁCTATE CON NOSOTROS</h1>
+                <div class="data">
+                    <p><i class="fa-solid fa-phone"></i> +51 955 329 623</p>
+                    <p><i class="fa-solid fa-envelope"></i> ieee.cis@uni.edu.pe</p>
+                    <p><i class="fa-solid fa-location-dot"></i>Av. Túpac Amaru 210, Rímac 15333</p>
+                </div>
+                <div class="links">
+                    <a href="https://www.facebook.com/ieeecisuni?locale=es_LA" target='_blank'><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/ieeecisuni?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        target='_blank'><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/82108595/admin/dashboard/" target='_blank'><i
+                            class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.youtube.com/channel/UCNBA45VpRCVy9t9SFd054mg" target='_blank'><i
+                            class="fa fa-youtube"></i></a>
+                </div>
+            </div>
+            <form id="form">
+                <div class="input-box">
+                    <input type="text" placeholder="Nombre y apellido" name="name" required>
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="email" placeholder="Correo electrónico" name="email" required>
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" placeholder="Asunto" name="asunto" required>
+                    <i class="fa-solid fa-pen-to-square"></i>
+                </div>
+                <div class="input-box">
+                    <textarea placeholder="Escribe tu mensaje..." name="mensaje" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" id="button">Enviar mensaje</button>
+            </form>
+            <script type="text/javascript"
+                src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+            <script type="text/javascript">
+                emailjs.init('G-HYnDk5wedbQkBZy')
+            </script>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- Ventana de alerta sweetalert2 -->
+        </div>
+        <div class="mapa">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1951.144600677856!2d-77.04926887499657!3d-12.023622473075612!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cf230af7b5e7%3A0x43ae74b7b59a27a0!2sUniversidad%20Nacional%20de%20Ingenier%C3%ADa!5e0!3m2!1ses!2spe!4v1723980536823!5m2!1ses!2spe"
+                frameborder="0">
+            </iframe>
+        </div>
+    </div>
+    </div>
+    <!-- ----------- PIE DE PAGINA ---------- -->
+    <footer class="pie-pagina logged-in">
+        <div class="group-1">
+            <div class="box">
+                <figure>
+                    <a href="#">
+                        <img src="assets/Logo/Logo-CIS-UNI.webp" alt="Logo del IEEE CIS UNI">
+                    </a>
+                </figure>
+            </div>
+            <div class="box">
+                <h2>SOBRE NOSOTROS</h2>
+                <p>En el Capítulo Estudiantil IEEE CIS de la UNI, nos enfocamos en promover el desarrollo de sistemas
+                    computacionales inteligentes y sus aplicaciones. Fomentamos la investigación en inteligencia
+                    artificial, aprendizaje automático y áreas afines, a través de talleres y proyectos colaborativos.
+                </p>
+            </div>
+            <div class="box">
+                <h2>SIGUENOS</h2>
+                <div class="red-social">
+                    <a href="https://www.facebook.com/ieeecisuni?locale=es_LA" target='_blank'
+                        class="fa fa-facebook"></a>
+                    <a href="https://www.instagram.com/ieeecisuni?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        target='_blank' class="fa fa-instagram"></a>
+                    <a href="https://www.linkedin.com/company/82108595/admin/dashboard/" target='_blank'
+                        class="fa fa-linkedin"></a>
+                    <a href="https://www.youtube.com/channel/UCNBA45VpRCVy9t9SFd054mg" target='_blank'
+                        class="fa fa-youtube"></a>
+                </div>
+            </div>
+        </div>
+        <div class="group-2">
+            <small>&copy; 2024 <b>IEEE CIS UNI</b> - Todos los Derechos Reservados.</small>
+        </div>
+    </footer>
+    <script src="js/app.js" defer type="module"></script>
+</body>
+
+
+</html>

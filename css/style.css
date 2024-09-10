@@ -1,0 +1,2516 @@
+:root {
+    --verde: #00A149;
+    --blanco: #fff;
+    --rojo: #bf0e14;
+    --oscuro: #000;
+    --celeste: #20b2e3;
+    --guinda: #6e2059;
+    --plomo: #ada5a5;
+    --morado: #4a0648;
+    --marron: #443232;
+    --amarillo: rgb(183, 131, 48);
+    --titulos: 'Noto Serif Tibetan', cursive;
+    --parrafos: 'Noto Serif Tibetan', sans-serif;
+
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.6rem;
+    text-align: center;
+    display: flexbox;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+/* GLOBALES */
+
+h1,
+h2 {
+    font-family: var(--titulos);
+}
+
+h3,
+p,
+a {
+    font-family: var(--parrafos);
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 95%;
+    /* Permite que tenga cierto marco, para poder manipular de mejor forma en un app movil*/
+}
+
+.celeste {
+    color: var(--celeste);
+}
+
+.rojo {
+    color: var(--rojo);
+}
+
+.ocultar {
+    display: none;
+}
+
+.btn-cerrar {
+    font-size: 2.5rem;
+    color: var(--blanco);
+    position: absolute;
+    font-weight: bold;
+    top: 20px;
+    right: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    user-select: none;
+    /* Para que no se seleccione la x al cliclear */
+}
+
+.pantalla-completa {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 4;
+    /* Este índice determina qué elementos aparecen delante o detrás de otros elementos. */
+
+}
+
+@keyframes desplazamiento {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.btn-cerrar:hover {
+    /* La pseudo-clase :hover se utiliza para seleccionar elementos cuando el usuario los activa pasándoles el puntero del ratón por encima. */
+    cursor: pointer;
+    /*Se muestra el cursor de la manita */
+}
+
+.btn {
+    text-decoration: none;
+    color: var(--blanco);
+    font-size: 2rem;
+    text-transform: capitalize;
+    /* Cada palabra empieza con mayuscula */
+    border-radius: 7px;
+    height: 5.2rem;
+    transition: all .3s ease-in-out;
+}
+
+.bordes {
+    border: 3px solid var(--blanco);
+    padding: 0rem 1rem;
+}
+
+.bordes:hover {
+    color: var(--celeste);
+    background-color: var(--blanco);
+
+}
+
+.img {
+    max-width: 100%;
+    height: auto;
+}
+
+.grid {
+    display: grid;
+    gap: 3rem;
+}
+
+h3,
+h2,
+p,
+div.subrayado,
+figure.imagen-nosotros {
+    animation: CSSscrollReveal ease-in-out both;
+    animation-timeline: view();
+    animation-range: entry 50% cover 25%;
+}
+
+@keyframes CSSscrollReveal {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------------------------- HEADER ------------------------------ */
+.encabezado {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.sub-encabezado {
+    display: flex;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: url('../assets/Cursos/login-register.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* ------------------ENCABEZAD0 2------------------ */
+.contenedor-navegacion-2 {
+    display: flex;
+    position: absolute;
+    background-image: linear-gradient(to top right, #250f32, #1f0f34);
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+}
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    /* Centra los elementos horizontalmente */
+    align-items: center;
+}
+
+.navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 40px;
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform-origin: center;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+
+.navigation a:hover::after {
+    transform-origin: center;
+    transform: scaleX(1);
+}
+
+.btnLogin-popup {
+    width: 130px;
+    height: 50px;
+    background: transparent;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: 500;
+    margin-left: 40px;
+    border: 2px solid;
+    outline: none;
+}
+
+.btnLogin-popup:hover {
+    background: #fff;
+    color: #151515;
+}
+
+
+/* --------------------ENCABEZAD0 1------------------ */
+
+.contenedor-navegacion {
+    width: 100%;
+    background-image: linear-gradient(to top right, #250f32, #1f0f34);
+    position: relative;
+    display: flex;
+    z-index: 5;
+    /* Como este z-index es mayor que 4 se apilará por encima de otros */
+}
+
+.contenido-navegacion {
+    display: flex;
+    /* Ordena de izquiera a derecha los elementos por default*/
+    align-items: center;
+    /* Centra los elementos de manera verticial */
+    justify-content: space-between;
+    /* Lo ordena de izquiera a derecha y lo pone en las esquinas */
+    margin: 10px 0;
+}
+
+.Logo {
+    display: flex;
+    width: auto;
+    height: auto;
+}
+
+.Logo img {
+    width: 16.5rem;
+    height: 5rem;
+    margin: 5px 10px;
+}
+
+.logo h2,
+.navegacion a {
+    color: var(--blanco);
+    font-size: 3.5rem;
+    font-weight: bolder;
+    align-items: center;
+    padding-left: 1rem;
+    max-height: 80px;
+    position: relative;
+    color: var(--blanco);
+    transition: color 0.3s ease-in-out;
+}
+
+.navegacion a {
+    text-decoration: none;
+    font-size: 16px;
+    padding: 1.2rem;
+    display: block;
+    position: relative;
+    color: var(--blanco);
+    transition: color 0.3s ease-in-out;
+    animation: desplazamiento .5s ease-in-out;
+}
+
+@media(min-width:768px) {
+    .navegacion a {
+        text-align: left;
+    }
+}
+
+
+.navegacion a:first-of-type {
+    margin-top: 4.5rem;
+}
+
+.navegacion {
+    position: absolute;
+    /*Ubica el contenedor navegación en cualquier posición  */
+    top: 0;
+    /*Ubica hacia la parte superior  */
+    right: 0;
+    /*Ubica hacia la derecha de la pagina   */
+    bottom: 0;
+    /*Para que el contenedor ocupe de negro toda la parte inferior   */
+    height: 100vh;
+    width: 30rem;
+    padding: 2rem 4rem;
+    background-color: var(--oscuro);
+    animation: desplazamiento .5s ease-in-out;
+    text-align: center;
+}
+
+@media(max-width:500px) {
+    .encabezado {
+        margin: 0;
+        /* Eliminar márgenes por defecto del navegador */
+        display: flex;
+        flex-direction: column;
+        /* Alinear elementos hijos verticalmente */
+        align-items: stretch;
+        /* Alinear elementos hijos al ancho completo */
+        justify-content: flex-start;
+        /* Alinear elementos hijos al principio */
+        height: 100vh;
+        /* Ocupar toda la altura de la ventana */
+    }
+
+    .navegacion {
+        width: 100%;
+    }
+
+    .navegacion a {
+        text-decoration: none;
+        font-size: 20px;
+        padding: 1.2rem;
+        display: block;
+        position: relative;
+        color: var(--blanco);
+        transition: color 0.3s ease-in-out;
+        animation: desplazamiento .5s ease-in-out;
+    }
+}
+
+
+/* SUBRAYADO DE LOS ENLACES DEL MENU */
+.navegacion a::after {
+    content: '';
+    /* Crea un pseudo-elemento vacío que se usará para el subrayado. */
+    position: absolute;
+    /* Posiciona el pseudo-elemento de forma absoluta */
+    left: 0;
+    /* Coloca el pseudo-elemento en el borde izquierdo del enlace. */
+    right: 0;
+    /* Asegura que el pseudo-elemento se extienda hasta el borde derecho del enlace. */
+    bottom: 0;
+    /* Coloca el pseudo-elemento justo debajo del texto del enlace. */
+    height: .5px;
+    /* Establece la altura del pseudo-elemento en 2 píxeles, haciendo que se vea como una línea delgada */
+    background-color: var(--blanco);
+    transform: scaleX(0);
+    /* Inicialmente, la escala horizontal del pseudo-elemento se establece en 0, haciéndolo invisible. */
+    transition: transform 0.3s ease-in-out;
+    /*Añade una transición suave para la transformación de la escala, haciendo que la animación tome 0.3 segundos. */
+}
+
+.navegacion a:hover {
+    color: var(--celeste);
+    /*Cambia el color del texto a plomo cuando el cursor pasa sobre el enlace. */
+}
+
+.navegacion a:hover::after {
+    transform: scaleX(0.9);
+    /*Expande la escala horizontal del pseudo-elemento a 1 (es decir, 100%), haciendo visible la línea de subrayado cuando el cursor pasa sobre el enlace. */
+}
+
+.lineas:hover {
+    cursor: pointer;
+}
+
+.lineas span {
+    background-color: var(--blanco);
+    display: block;
+    width: 5rem;
+    height: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+
+
+/* ----------- Media Queries para el encabezado------ */
+
+/* Estilo por defecto para pantallas mayores a 720px */
+.contenedor-navegacion-2 {
+    display: flex;
+}
+
+.contenedor-navegacion {
+    display: none;
+}
+
+/* Media query para pantallas con un ancho menor a 720px */
+@media (max-width: 1024px) {
+    .contenedor-navegacion-2 {
+        display: none;
+    }
+
+    .contenedor-navegacion {
+        display: flex;
+        /* O display: block; según lo que necesites */
+    }
+}
+
+/* -------------------------------FORMULARIO ------------------------ */
+.wrapper {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    width: 400px;
+    height: 490px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 20px;
+    backdrop-filter: blur(40px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    overflow: hidden;
+    transform: scale(0);
+    transition: transform .5s ease, height .2s ease;
+}
+
+.wrapper.active-popup {
+    transform: scale(1);
+    display: flex !important;
+}
+
+.wrapper.active {
+    height: 520px;
+}
+
+.wrapper .form-box {
+    width: 100%;
+    padding: 40px;
+}
+
+.wrapper .form-box.login {
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.login {
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .form-box.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+}
+
+.wrapper.active .form-box.register {
+    transition: transform 0.18s ease;
+    transform: translateX(0);
+}
+
+
+.wrapper .icon-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #162938;
+    font-size: 2em;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.form-box h2 {
+    font-size: 2em;
+    color: #142634;
+    text-align: center;
+    padding-top: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.input-box-1 {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #162938;
+    margin: 30px 0;
+
+}
+
+.input-box-1 label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box-1 input:focus~label,
+.input-box-1 input:valid~label {
+    top: -5px;
+}
+
+.input-box-1 input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #fefefe60;
+    font-weight: 500;
+    padding: 0 35px 0 5px;
+}
+
+.input-box-1 .icon {
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #919191;
+    line-height: 57px;
+}
+
+/*   Input para credenciales guardadas  */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 30px rgba(0, 0, 0, 0) inset !important;
+    /* Asegura transparencia */
+    -webkit-text-fill-color: #fefefe60 !important;
+    /* Mantén el color del texto */
+    background: transparent !important;
+    /* Forza la transparencia del fondo */
+    transition: background-color 5000s ease-in-out 0s;
+    /* Evita que el fondo cambie abruptamente */
+}
+
+.remember-forgot {
+    font-size: .9em;
+    color: #fefefe60;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.remember-forgot label input {
+    accent-color: #162938;
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #fefefe60;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.btn-formulario {
+    width: 100%;
+    height: 45px;
+    background: #162938;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+}
+
+/* ----- Google Facebook ------- */
+.social {
+    display: grid;
+    text-align: center;
+    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 10px;
+    margin: 20px 0;
+    gap: 30px;
+}
+
+.social .go {
+    background-color: rgba(255, 255, 255, 0.173);
+    border-radius: 7px;
+    padding: 10px 10px;
+}
+
+.social .go a {
+    text-decoration: none;
+    color: white;
+}
+
+.social .fb {
+    background-color: rgba(255, 255, 255, 0.173);
+    border-radius: 7px;
+    padding: 10px 10px;
+}
+
+.social .fb a {
+    text-decoration: none;
+    color: white;
+}
+
+.social .gh {
+    background-color: rgba(255, 255, 255, 0.173);
+    border-radius: 7px;
+    padding: 10px 10px;
+}
+
+.social .gh a {
+    text-decoration: none;
+    color: white;
+}
+
+/* ------------------ */
+.login-register p {
+    font-size: .9em;
+    color: #fefefe60;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+    font-family: 'Poppins', sans-serif !important;
+    animation: none;
+}
+
+.login-register a {
+    color: #e2e0e0;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.login-register p a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries para Responsividad de Formulario*/
+
+
+
+@media (max-width: 500px) {
+    .encabezado.active-popup{
+        display: flex ;
+        
+    }
+    .contenedor-encabezado{
+        margin-bottom: 10rem;
+    }
+    .wrapper {
+        display: flex !important;
+        position: relative;
+        align-items: center;
+        text-align: center;
+        width: 330px ;
+        height: 520px ;
+        margin: auto 20px auto 30px;
+    }
+    .Login-form {
+        width: 100%;
+    }
+
+    .Signup-Form {
+        width: 100%;
+        height: 90%;
+    }
+
+    .login-register p {
+        margin: 20px 0 50px;
+    }
+
+    .contenedor-navegacion {
+        width: 100vw;
+        background-image: linear-gradient(to top right, #250f32, #1f0f34);
+    }
+    .form-box h2 {
+        font-size: 2em;
+        color: #142634;
+        text-align: center;
+        padding-top: 40px;
+        font-family: 'Poppins', sans-serif;
+    }
+    .navegacion{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .btnLogin-popup{
+        margin: 0;
+    }
+    /* justify-content: center;
+        align-items: center;
+        position: relative;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        width: 400px;
+        height: 490px;
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, .5);
+        border-radius: 20px;
+        backdrop-filter: blur(40px);
+        box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+        overflow: hidden;
+        transform: scale(0);
+        transition: transform .5s ease, height .2s ease; */
+
+    .social {
+        grid-template-columns: repeat(3, 1fr);
+        /* Cambiar a una columna en pantallas muy pequeñas */
+        gap: 10px;
+        /* Reducir el espacio entre elementos */
+    }
+
+    .btn-formulario {
+        font-size: 0.9em;
+        /* Ajuste de tamaño de fuente para botones */
+        height: 40px;
+        /* Altura de botón ajustada */
+    }
+    .ocultar{
+        display: none;
+    }
+}
+
+/* -------------------------------------------------------- */
+
+
+/* ------------------IMAGEN DE PAGINA PRINCPAL------------------ */
+.contenido-header {
+    position: relative;
+    padding-top: 7.5rem;
+    height: 100%;
+    width: 100%;
+    background-image: url(../assets/img/JuntaCis.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.contenido-header::before {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.texto-encabezado {
+    position: relative;
+    /* Para que el texto se ponga encima del difuminado */
+    z-index: 2;
+    width: 100%;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    /* Para que el texto(hijos) de mi encabezado este en columnas */
+    align-items: center;
+    /* Para posicionar en el centro de manera horizontal*/
+    justify-content: center;
+    /* Para posicionar en el centro de manera vertical */
+}
+
+.texto-encabezado h2 {
+    color: var(--blanco);
+    font-size: 5rem;
+    text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.5);
+    margin: 0;
+    padding: 0;
+    height: 8rem;
+    display: inline-block;
+    vertical-align: middle;
+    box-sizing: border-box;
+    /* Asegura que el tamaño de la caja dependa solo del contenido */
+    overflow: visible;
+}
+
+.texto-encabezado p {
+    color: var(--blanco);
+    text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Media Queries */
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 500px) {
+    .contenido-header {
+        width: 100% !important;
+        background-image: url(../assets/img/JuntaCis.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-attachment: fixed;
+        height: 30vh !important;
+    }
+
+    .contenido-header {
+        position: relative;
+        height: 40rem;
+        /* Reducir la altura en dispositivos móviles */
+        background-attachment: scroll;
+        /* Evitar problemas con background fijo en móviles */
+    }
+
+    .texto-encabezado {
+        display: flex;
+        height:1rem;
+        /* Permitir que el contenedor se ajuste al contenido */
+        padding-bottom: 90rem;
+        /* Añadir algo de padding para que el contenido no toque los bordes */
+    }
+    
+
+    .texto-encabezado h2 {
+        font-size: 2.5rem !important;
+        /* Reducir el tamaño del texto en móviles */
+        padding: 15px 0 0 0;
+        box-sizing: content-box !important;
+    }
+
+    .texto-encabezado p {
+        color: var(--blanco);
+        text-shadow: 3px 2px 5px rgba(0, 0, 0, 0.5);
+        font-size: 14px;
+        padding-top: -15px;
+    }
+
+    .btn {
+        display: none;
+        text-decoration: none;
+        color: var(--blanco);
+        font-size: 1.3rem;
+        text-transform: capitalize;
+        /* Cada palabra empieza con mayuscula */
+        border-radius: 7px;
+        height: 3.5rem;
+        transition: all .3s ease-in-out;
+        margin-top: 4rem;
+    }
+
+    .Arianna {
+        height: 35px !important;
+    }
+
+}
+
+/* Estilos para tabletas */
+@media (min-width: 601px) and (max-width: 992px) {
+    .contenido-header {
+        height: 60rem;
+        /* Ajustar la altura en tabletas */
+    }
+
+    .texto-encabezado h2 {
+        font-size: 4rem;
+        /* Ajustar el tamaño del texto en tabletas */
+        height: auto;
+    }
+
+    .texto-encabezado {
+        height: auto;
+        /* Ajustar el contenedor al contenido */
+        padding: 2rem;
+        /* Añadir algo de padding para un mejor diseño */
+    }
+}
+
+/* ----------------- SOBRE NOSOTROS--------------  */
+
+.contenedor-nosotros {
+    display: flex;
+    justify-content: space-between;
+    padding: 5rem 0;
+
+}
+
+.container-nosotros {
+    display: flex;
+    /* Ordena de izquiera a derecha los elementos por default*/
+    align-items: center;
+    /* Centra los elementos de manera verticial */
+    justify-content: center;
+    padding: 5vw 15vw;
+    position: relative;
+    justify-content: space-between;
+}
+
+@media (min-width: 768px) {
+    .container-nosotros {
+        grid-template-columns: 30% 67%;
+        grid-template-rows: auto;
+    }
+}
+
+/*-------------------IMAGEN NOSOTROS---------------- */
+.imagen-nosotros {
+    text-align: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.imagen-nosotros img {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    vertical-align: middle;
+    max-width: 95%;
+}
+
+.texto-nosotros {
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    padding: 4rem;
+    margin-inline: 4rem;
+    text-align: center;
+}
+
+.texto-nosotros h2 {
+    font-size: 4rem;
+    font-weight: normal;
+    height: 9rem;
+}
+
+.subrayado {
+    background-color: var(--oscuro);
+    display: inline-block;
+    width: 12rem;
+    height: 0.5rem;
+    margin-bottom: 2rem;
+    background-color: var(--morado);
+}
+
+.texto-nosotros p {
+    line-height: 1.5;
+    /* Disminuye el interlineado */
+    padding: 2rem;
+    font-size: medium;
+}
+
+/* Media Queries */
+@media (max-width: 500px) {
+    .container-nosotros {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .texto-nosotros {
+        padding: 2rem;
+        margin-inline: 1rem;
+    }
+
+    .texto-nosotros h2 {
+        font-size: 2.5rem;
+        height: auto;
+    }
+
+    .subrayado {
+        width: 8rem;
+        height: 0.4rem;
+    }
+
+    .texto-nosotros p {
+        padding: 1rem;
+        font-size: small;
+    }
+}
+
+/* Estilos para tabletas */
+@media (min-width: 601px) and (max-width: 992px) {
+    .texto-nosotros {
+        padding: 3rem;
+        margin-inline: 2rem;
+    }
+
+    .texto-nosotros h2 {
+        font-size: 3rem;
+        height: auto;
+    }
+
+    .subrayado {
+        width: 10rem;
+        height: 0.4rem;
+    }
+
+    .texto-nosotros p {
+        padding: 1.5rem;
+        font-size: medium;
+    }
+}
+
+/* ------------------------NUESTRO EQUIPO---------------------------*/
+
+.container {
+    margin-top: 5%;
+    margin: 30px 0px 0px 0px;
+    padding-bottom: 4rem;
+    padding-top: 3rem;
+    text-align: center;
+    background-color: #f7f7f7;
+}
+
+.container h2 {
+    font-size: 4rem;
+    font-weight: normal;
+    text-align: center;
+    /* Centramos el titulo  */
+    height: 100px;
+}
+
+.container-slides {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    margin: 0px 50px;
+}
+
+.team .team-name {
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+    align-items: center;
+    text-align: center;
+    padding: 37.9px;
+    width: 347px !important;
+    border-radius: 10px;
+    background: #081849;
+    box-shadow: 0px 0px 21px rgba(0, 0, 0, 0.5);
+    height: 380px;
+    transition: all 0.4s;
+}
+
+.team .team-name:hover {
+    box-shadow: inset 0px -8px 0px #850d81;
+    /* Aplica el borde morado por dentro sin afectar la dimensión del contenedor*/
+    transform: translateY(-20px);
+}
+
+.slider-wrapper {
+    /* Ajuste para la caja que envuelve a los slides */
+    overflow: hidden;
+    text-align: center;
+    justify-content: center;
+    margin: 0 50px;
+    padding: 100px 0px 30px 0px;
+
+}
+
+.team .slider-wrapper {
+    display: flex;
+    /* Hacemos flexibles los elementos */
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+}
+
+.team .team-name .team-img img {
+    width: 130px;
+    /* ancho de la imagen */
+    height: 130px;
+    /*  alto de la imagen */
+    border-radius: 50%;
+    /* Para que tenga la forma de un circulo */
+    position: absolute;
+    top: -70px;
+    transform: translateX(-50%);
+    border: solid 8px #081849;
+    /* Borde circular de la imagen color marron */
+}
+
+.team .team-name h2 {
+    color: var(--blanco);
+    font-size: 2.5rem;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    line-height: 30px;
+    /* Separación de entrelineado */
+    height: 20px;
+}
+
+.team .team-name p {
+    color: rgb(195, 195, 195);
+    line-height: 1.5;
+    font-size: 1.55rem;
+}
+
+.team .team-name p.role {
+    color: rgba(113, 113, 113, 0.982);
+    font-size: 23px;
+    text-transform: uppercase;
+    /* Letras en MAYUSCULA */
+    margin: 15px;
+    font-family: Georgia;
+}
+
+.container-slides .swiper-pagination-bullet {
+    background-color: var(--oscuro);
+    height: 15px;
+    width: 15px;
+}
+
+.container-slides .swiper-slide-button {
+    color: var(--morado);
+    transition-duration: 0.3s;
+}
+
+.container-slides .swiper-slide-button:hover {
+    color: var(--amarillo);
+    scale: 1.3;
+}
+
+/* Media Queries */
+@media (min-width: 481px) and (max-width: 768px) {
+    .slider-wrapper {
+        margin: 0 10px 10px 85px;
+    }
+
+    .slider-wrapper .swiper-slide-button {
+        display: none;
+    }
+
+    .team .team-name {
+        width: 300px !important;
+        align-items: center;
+        height: 35vh;
+    }
+
+    .team .team-name .team-img img {
+        width: 100px;
+        /* Reduce el tamaño de la imagen */
+        height: 100px;
+        top: -50px;
+        /* Ajusta la posición de la imagen para que se vea bien */
+    }
+
+    .container-slides {
+        margin: 0 0px;
+        /* Reduce el margen lateral en pantallas pequeñas */
+        padding: 0;
+        /* Elimina padding en pantallas pequeñas si es necesario */
+    }
+}
+
+@media (max-width: 480px) {
+    .container-slides {
+        margin: 20px 20px;
+    }
+
+    .slider-wrapper {
+        /* Caja que envuelve a los slides */
+        overflow: hidden;
+        text-align: center;
+        justify-content: center;
+        margin: 0px 0px 0 0;
+        padding: 100px 20px 130px 0px;
+    }
+
+    .team .team-name {
+        display: flex;
+        width: 80% !important;
+        /* Ocupa todo el ancho disponible en pantallas muy pequeñas */
+        text-align: center;
+        height: auto;
+    }
+
+    .team .team-name .team-img img {
+        width: 80px;
+        /* Reduce aún más la imagen */
+        height: 80px;
+        top: -40px;
+    }
+
+    .container-slides {
+        padding: 0;
+        /* Elimina cualquier padding adicional */
+        margin: 0 0 0 20px;
+    }
+
+    .container-slides .swiper-pagination-bullet {
+        background-color: var(--oscuro);
+        height: 15px;
+        width: 15px;
+        margin-bottom: 5rem !important;
+    }
+
+    .container-slides .swiper-slide-button {
+        color: var(--morado);
+        transition-duration: 0.3s;
+        scale: 0.8;
+        margin: 0px 5px;
+
+    }
+
+    .container-slides .swiper-slide-button:hover {
+        color: var(--amarillo);
+        scale: 1;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .container {
+        margin: 0;
+        padding: 0;
+    }
+
+    .slider-wrapper {
+        /* Caja que envuelve a los slides */
+        margin: 0px 0px 0 0px;
+        padding: 100px 0px 60px 0px;
+        text-align: center;
+        align-items: center;
+        height: 60%;
+    }
+
+    .team .team-name {
+        width: 80% !important;
+        /* Ocupa todo el ancho disponible en pantallas muy pequeñas */
+        height: 70%;
+        padding: 35px 35px 20px 35px;
+    }
+
+    .team .team-name .team-img img {
+        width: 120px;
+        /* ancho de la imagen */
+        height: 120px;
+        /*  alto de la imagen */
+        border-radius: 50%;
+        /* Para que tenga la forma de un circulo */
+        position: absolute;
+        top: -70px;
+        transform: translateX(-50%);
+        border: solid 8px #081849;
+        /* Borde circular de la imagen color marron */
+    }
+
+    .team .team-name h2 {
+        font-size: 2.2rem;
+        margin-top: 50px;
+        margin-bottom: 5px;
+        line-height: 30px;
+        /* Separación de entrelineado */
+        height: 20px;
+    }
+
+    .team .team-name p {
+        line-height: 1.5;
+        font-size: 1.3rem;
+
+    }
+
+    .team .team-name p.role {
+        font-size: 18px;
+        margin: 10px;
+    }
+
+    .container-slides .swiper-pagination-bullet {
+        background-color: var(--oscuro);
+        height: 15px;
+        width: 15px;
+        margin-bottom: 3rem !important;
+
+    }
+
+}
+
+/* -----------------IMAGEN DE SECCIÓN DE CURSOS---------------- */
+
+.imagen-cursos {
+    background-image: url(../assets/Cursos/Imagen-Curso.png);
+    background: no repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 19em;
+    /* Alto del fondo de la imagen */
+    padding: 4em;
+}
+
+.imagen-cursos h2 {
+    color: var(--blanco);
+    text-align: center;
+    font-size: 7em;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px rgb(18, 23, 42);
+}
+
+.imagen-cursos h3 {
+    color: var(--blanco);
+    text-align: center;
+    padding: 0em;
+    font-size: 2.3em;
+    font-family: sans-serif;
+    letter-spacing: 5px;
+    /* ajusta el espaciado entre los caracteres de un texto */
+    text-shadow: 0 0 5px rgb(18, 23, 42);
+}
+
+/* ------------------------------------------  CURSOS  -------------------------------------------- */
+
+/* ---------------- CARDS SLIDES DE CURSOS---------------- */
+
+.container-cursos {
+    display: flex;
+    background-color: #efefef;
+    max-width: 100%;
+    width: 100%;
+    padding: 0 15%;
+
+}
+
+.card-wrapper {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    height: 68vh;
+    width: 100%;
+
+}
+
+.card {
+    background: var(--blanco);
+    border-radius: 12px 12px 12px 12px;
+    margin: 30px;
+    width: 33.3%;
+    transition: 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-bottom: solid 6px rgb(137, 17, 112);
+}
+
+.card .image-box {
+    height: 250px;
+    position: relative;
+}
+
+.card .image-box img {
+    height: 100%;
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+}
+
+.card .image-box .disponibilidad {
+    display: flex;
+    top: 10%;
+    /* Centra el texto verticalmente */
+    left: 0;
+    /* Centra el texto horizontalmente */
+    background-color: rgb(91, 153, 82);
+    color: var(--blanco);
+    width: auto;
+    font-size: 90%;
+    /* Define el tamaño de los caracteres */
+    height: 30px;
+    position: absolute;
+    text-align: center;
+    align-items: center;
+    padding: 9px 6px 0 5px;
+    /* padding: top right bottom left; */
+    border-radius: 0 8px 8px 0;
+}
+
+.card .image-box .no-disponibilidad {
+    display: flex;
+    top: 10%;
+    /* Centra el texto verticalmente */
+    left: 0;
+    /* Centra el texto horizontalmente */
+    background-color: rgb(123, 20, 56);
+    color: var(--blanco);
+    width: auto;
+    font-size: 90%;
+    /* Define el tamaño de los caracteres */
+    height: 30px;
+    position: absolute;
+    text-align: center;
+    align-items: center;
+    padding: 9px 6px 0 5px;
+    /* padding: top right bottom left; */
+    border-radius: 0 8px 8px 0;
+}
+
+/* --------------- Contenido escrito de CURSO----------------- */
+.card .profile-details {
+    display: flex;
+    text-align: center;
+    column-gap: 15px;
+    padding: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+
+.nombre-de-curso p {
+    display: flex;
+    left: 0;
+    /* Para que se apegue a la izquierda, se usa en con position:absolute  */
+    animation: none;
+}
+
+.nombre-de-curso h2 {
+    line-height: 1.5;
+
+}
+
+.card .profile-details img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+.profile-details .name {
+    display: flex;
+    left: 0;
+    animation: none;
+    /* Con esta propiedad anulo mi animación y esta clase no lo hereda */
+    font-size: 15px;
+    font-weight: 500;
+    font-family: "Poppins";
+    width: auto;
+
+}
+
+.profile-details .job {
+    font-size: 15px;
+    font-weight: 500;
+    color: #4d4d4d;
+    font-family: "Poppins";
+}
+
+/* ----------------BOTON DE LOS CURSOS----------- */
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.btns {
+    text-decoration: none;
+    /* Quita el delineado  */
+    position: relative;
+    font-size: 1.5rem;
+    padding: 5px 10px;
+    overflow: hidden;
+    /* Asegura que el contenido no desborde */
+    font-family: 'Poppins';
+}
+
+.btn-1 {
+    color: var(--blanco);
+    /* Color blanco de la palabra del boton */
+    border-radius: 40px;
+    box-shadow: 0 0 0 0 rgba(145, 64, 248, 0.5), 0 0 0 0 rgba(39, 200, 255, 0.5);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    overflow: hidden;
+    width: 40%;
+    z-index: 0;
+}
+
+.btn-1::after {
+    content: '';
+    width: 350px;
+    height: 350px;
+    position: absolute;
+    top: -50px;
+    left: -80px;
+    text-align: center;
+    background: #58cc58;
+    background-image: linear-gradient(-225deg, #231557 0%, #44107A 29%, #FF1361 67%, #FFF800 100%);
+    z-index: -1;
+    transition: transform 0.5s ease;
+    transform: rotate(-45deg)
+}
+
+.btn-1:hover {
+    transform: translate(0, -2px);
+    box-shadow: 5px -4px 20px 0 rgba(16, 226, 253, 0.5), -5px 4px 20px 0 rgba(183, 0, 255, 0.7);
+}
+
+.btns:hover::after {
+    transform: rotate(150deg);
+}
+
+/* Media Queries */
+
+/* Estilos para pantallas pequeñas (móviles) */
+@media (max-width: 600px) {
+    .imagen-cursos {
+        background-image: url(../assets/Cursos/Imagen-Curso.png);
+        width: 100%;
+        height: 15em;
+        /* Alto del fondo de la imagen */
+        padding: 4em;
+    }
+
+    .imagen-cursos h2 {
+        color: var(--blanco);
+        text-align: center;
+        font-size: 4em;
+        font-family: sans-serif;
+        letter-spacing: 2px;
+        text-shadow: 0 0 5px rgb(18, 23, 42);
+        width: 100%;
+    }
+
+    .imagen-cursos h3 {
+        color: var(--blanco);
+        text-align: center;
+        padding: 0em;
+        font-size: 1.5em;
+        font-family: sans-serif;
+        letter-spacing: 5px;
+        /* ajusta el espaciado entre los caracteres de un texto */
+        text-shadow: 0 0 5px rgb(18, 23, 42);
+        width: 100%;
+    }
+
+    .container-cursos {
+        padding: 0 5%;
+        /* Reducir padding en móviles */
+
+    }
+
+    .card-wrapper {
+        flex-direction: column;
+        /* Cambiar la disposición a columna en móviles */
+        height: auto;
+        width: 80%;
+        margin-left: 36px;
+    }
+
+    .card {
+        margin: 30px 30px;
+        /* Reducir márgenes en móviles */
+        width: 100%;
+        max-width: 100%;
+        /* Asegura que las tarjetas ocupen todo el ancho en móviles */
+    }
+
+    .card .image-box {
+        height: 190px;
+        /* Reducir la altura de la imagen en móviles */
+    }
+
+    .card .profile-details {
+        padding: 10px;
+        /* Reducir padding en móviles */
+    }
+
+    .buttons .btn-1 {
+        width: 50%;
+        /* Aumentar el tamaño del botón en móviles */
+    }
+}
+
+/* Estilos para tabletas */
+@media (min-width: 601px) and (max-width: 992px) {
+    .container-cursos {
+        padding: 0 10%;
+        /* Ajustar padding en tabletas */
+    }
+
+    .card-wrapper {
+        flex-direction: row;
+        /* Mantener disposición en fila en tabletas */
+        flex-wrap: wrap;
+    }
+
+    .card {
+        margin: 20px;
+        /* Ajustar márgenes en tabletas */
+        width: 45%;
+        /* Ajustar ancho en tabletas */
+        max-width: 45%;
+    }
+
+    .card .image-box {
+        height: 200px;
+        /* Ajustar la altura de la imagen en tabletas */
+    }
+
+    .buttons .btn-1 {
+        width: 80%;
+        /* Ajustar el tamaño del botón en tabletas */
+    }
+}
+
+/* --------------------------- EVENTOS---------------------------------------------- */
+.Eventos {
+    display: flex;
+}
+
+.Aparecer-Eventos {
+    display: flex;
+    background-image: url(../assets/Eventos/Fondo_Eventos.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    min-height: 100vh;
+    font-family: 'Montserra', sans-serif;
+    flex-direction: column !important;
+
+}
+
+.Eventos.active-popup {
+    display: none;
+}
+
+.title-eventos {
+    margin-top: 6%;
+}
+
+.title-eventos h2 {
+    color: var(--blanco);
+    text-align: center;
+    font-weight: 700;
+    font-size: 4em;
+    font-family: sans-serif;
+    letter-spacing: 4px;
+    text-shadow: 0 0 10px rgb(175, 47, 189);
+}
+
+.blog-slider {
+    width: 95%;
+    display: flex !important;
+    position: relative;
+    max-width: 800px;
+    margin: 5% auto auto auto;
+    background: #fff;
+    box-shadow: 0px 14px 80px rgba(34, 35, 58, 0.2);
+    padding: 25px;
+    border-radius: 25px;
+    height: 400px;
+    transition: all 0.3s;
+    align-items: center;
+}
+
+@media screen and (max-width: 992px) {
+    .blog-slider {
+        max-width: 680px;
+        height: 400px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .blog-slider {
+        min-height: 500px;
+        height: auto;
+        margin: 180px auto;
+    }
+}
+
+@media screen and (max-height: 500px) and (min-width: 992px) {
+    .blog-slider {
+        height: 350px;
+    }
+}
+
+.blog-slider__item {
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    .blog-slider__item {
+        flex-direction: column;
+    }
+}
+
+.blog-slider__item.swiper-slide-active .blog-slider__img img {
+    opacity: 1;
+    transition-delay: 0.3s;
+}
+
+.blog-slider__item.swiper-slide-active .blog-slider__content>* {
+    opacity: 1;
+    transform: none;
+}
+
+.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(1) {
+    transition-delay: 0.3s;
+}
+
+.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(2) {
+    transition-delay: 0.4s;
+}
+
+.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(3) {
+    transition-delay: 0.5s;
+}
+
+.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(4) {
+    transition-delay: 0.6s;
+}
+
+.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(5) {
+    transition-delay: 0.7s;
+}
+
+.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(6) {
+    transition-delay: 0.8s;
+}
+
+.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(7) {
+    transition-delay: 0.9s;
+}
+
+.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(8) {
+    transition-delay: 1s;
+}
+
+.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(9) {
+    transition-delay: 1.1s;
+}
+
+.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(10) {
+    transition-delay: 1.2s;
+}
+
+.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(11) {
+    transition-delay: 1.3s;
+}
+
+.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(12) {
+    transition-delay: 1.4s;
+}
+
+.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(13) {
+    transition-delay: 1.5s;
+}
+
+.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(14) {
+    transition-delay: 1.6s;
+}
+
+.blog-slider__item.swiper-slide-active .blog-slider__content>*:nth-child(15) {
+    transition-delay: 1.7s;
+}
+
+.blog-slider__img {
+    width: 300px;
+    flex-shrink: 0;
+    height: 300px;
+    background-image: linear-gradient(-225deg, #FF057C 0%, #7C64D5 48%, #4CC3FF 100%);
+    box-shadow: 4px 13px 30px 1px rgba(244, 11, 147, 0.5), -5px 4px 20px 0 rgba(16, 226, 253, 0.5), -5px 4px 20px 0 rgba(183, 0, 255, 0.5);
+    border-radius: 20px;
+    transform: translateX(-80px);
+    overflow: hidden;
+}
+
+.blog-slider__img:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    opacity: 0.8;
+}
+
+.blog-slider__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 0;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+@media screen and (min-width: 1024px) {
+    .blog-slider__img {
+        align-items: center;
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .blog-slider__img {
+        transform: translateY(-50%);
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .blog-slider__img {
+        width: 95%;
+    }
+}
+
+@media screen and (max-height: 500px) and (min-width: 992px) {
+    .blog-slider__img {
+        height: 270px;
+    }
+}
+
+.blog-slider__content {
+    padding-right: 25px;
+}
+
+@media screen and (max-width: 768px) {
+    .blog-slider__content {
+        margin-top: -80px;
+        text-align: center;
+        padding: 0 30px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .blog-slider__content {
+        padding: 0;
+    }
+}
+
+.blog-slider__content>* {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: all 0.4s;
+}
+
+.blog-slider__code {
+    color: #7b7992;
+    margin-bottom: 15px;
+    display: block;
+    font-weight: 500;
+}
+
+.blog-slider__title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0d0925;
+    margin-bottom: 20px;
+}
+
+.blog-slider__text {
+    color: #4e4a67;
+    margin-bottom: 30px;
+    line-height: 1.5em;
+}
+
+.blog-slider__button {
+    display: inline-flex;
+    background-image: linear-gradient(-225deg, #FF057C 0%, #7C64D5 48%, #4CC3FF 100%);
+    padding: 2% 4% 0% 4%;
+    border-radius: 50px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    letter-spacing: 1px;
+    transition: 0.4s ease-in-out;
+}
+
+.blog-slider__button:hover {
+    background-image: linear-gradient(-150deg, #FF057C 0%, #7C64D5 48%, #4CC3FF 100%);
+}
+
+@media screen and (min-width: 1024px) {
+    .blog-slider__content {
+        text-align: left;
+        /* Alinea los hijos a la izquierda en pantallas grandes */
+        align-items: flex-start;
+        /* Alinea los elementos hijos al inicio (izquierda) */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .blog-slider__button {
+        width: 93%;
+    }
+}
+
+.blog-slider .swiper-container-horizontal>.swiper-pagination-bullets,
+.blog-slider .swiper-pagination-custom,
+.blog-slider .swiper-pagination-fraction {
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+}
+
+.blog-slider__pagination {
+    position: absolute;
+    z-index: 21;
+    right: 20px;
+    width: 11px !important;
+    text-align: center;
+    left: auto !important;
+    top: 50%;
+    bottom: 27% !important;
+    transform: translateY(-50%);
+}
+
+@media screen and (max-width: 768px) {
+    .blog-slider__pagination {
+        transform: translateX(-50%);
+        left: 50% !important;
+        top: 3% !important;
+        width: 100% !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.blog-slider__pagination.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 8px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .blog-slider__pagination.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0 5px;
+    }
+}
+
+.blog-slider__pagination .swiper-pagination-bullet {
+    width: 11px;
+    height: 11px;
+    display: block;
+    border-radius: 10px;
+    background: #062744;
+    opacity: 0.2;
+    transition: all 0.3s;
+}
+
+.blog-slider__pagination .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #9f03b8;
+    height: 30px;
+    box-shadow: 0px 0px 20px rgba(225, 37, 72, 0.3);
+}
+
+@media screen and (max-width: 768px) {
+    .blog-slider__pagination .swiper-pagination-bullet-active {
+        height: 11px;
+        width: 30px;
+    }
+}
+
+/*  -------------------------------------- CONTACTO --------------------------------------- */
+
+.container-contacto {
+    height: 105vh;
+}
+
+.contacto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    grid-template-columns: repeat(2, 50%);
+    /*  Se crea dos columnas que ocupan el 50% del ancho del contenedor padre */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 65vh;
+    padding: 40px 30px 0px 30px !important;
+    background: #ffffff
+}
+
+.box-info {
+    color: var(--oscuro);
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 35%;
+    margin-right: 20px;
+}
+
+.box-info>h1 {
+    text-align: left;
+    letter-spacing: 5px;
+    line-height: 1.5;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.data>p {
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.data>p>i {
+    color: #9f03b8;
+    ;
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+.links {
+    display: flex;
+    gap: 15px;
+}
+
+.links>a {
+    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    background: #9f03b8;
+    text-align: center;
+    transition: .1s;
+}
+
+.links>a>i {
+    color: #ffffff;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+.contacto form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    width: 40%;
+}
+
+.input-box {
+    position: relative;
+    background: rgba(145, 64, 248, 0.08)
+}
+
+.input-box>input {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    outline: none;
+    background: rgba(255 255 255 / .1);
+    border: 3px solid transparent;
+    letter-spacing: 1px;
+    transition: .3s;
+    color: var(--oscuro);
+
+}
+
+.input-box>input::placeholder,
+.input-box>textarea::placeholder {
+    color: var(--oscuro);
+
+}
+
+.input-box>input:focus::placeholder,
+.input-box>textarea:focus::placeholder {
+    color: transparent;
+}
+
+.input-box>input:focus,
+.input-box>textarea:focus {
+    border-bottom: 3px solid #9f03b8;
+    animation: shake .2s;
+}
+
+.input-box>textarea {
+    width: 100%;
+    height: 130px;
+    padding: 10px;
+    background: rgba(255 255 255 / .1);
+    border: 3px solid transparent;
+    letter-spacing: 1px;
+    outline: none;
+    transition: .3s;
+    color: #000000;
+    letter-spacing: 1.5px;
+}
+
+
+.contacto .input-box>i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    color: rgba(0, 0, 0, 0.3);
+    transition: .3s;
+}
+
+.contacto .input-box>input:focus~i {
+    color: #9f03b8
+}
+
+.contacto form>button {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    background-image: linear-gradient(-150deg, #FF057C 0%, #7C64D5 48%, #4CC3FF 100%);
+    color: #ffffff;
+    /* Color del texto de button */
+    border: none;
+    transition: .1s;
+    cursor: pointer;
+    font-size: 1.5rem !important;
+}
+
+.contacto form>button:hover,
+.links>a:hover {
+    background-image: linear-gradient(-225deg, #FF057C 0%, #7C64D5 48%, #4CC3FF 100%);
+}
+
+.mapa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* Ajusta el ancho al contenedor padre */
+
+}
+
+.mapa iframe {
+    width: 100%;
+    /* Hace que el mapa ocupe todo el ancho disponible */
+    max-width: 600px;
+    /* Limita el ancho máximo del mapa */
+    height: 300px;
+    /* Establece una altura fija */
+    border: 0;
+    /* Elimina el borde del iframe */
+    border-radius: 8px;
+    /* Añade bordes redondeados */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    /* Añade sombra para darle un efecto de elevación */
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-10px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(10px);
+    }
+}
+
+
+@media screen and (max-width:500px) {
+    .contacto {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0 !important;
+        flex-wrap: wrap;
+        padding: 40px 5px 0px 5px !important;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 48%;
+    }
+
+    .box-info {
+        gap: 15px;
+    }
+
+    .box-info>h1 {
+        font-size: 1.6rem;
+    }
+
+    .data>p {
+        font-size: 1rem;
+        flex-wrap: wrap;
+
+    }
+
+    form>button {
+        margin: 0 !important;
+    }
+
+    .links>a>i {
+        color: #ffffff;
+        line-height: 0px !important;
+        font-size: 18px !important;
+    }
+
+    .links>a {
+        width: 50px;
+        height: px;
+        padding: 6px;
+    }
+
+    .mapa {
+        display: flex;
+        /* Utiliza Flexbox para centrar */
+        justify-content: center;
+        /* Centra el contenido horizontalmente */
+        align-items: center;
+        /* Centra el contenido verticalmente */
+        width: 100% !important;
+        /* Ajusta el ancho al contenedor padre */
+        padding: 0px;
+        /* Añade un poco de padding para separarlo de otros elementos */
+    }
+
+    .mapa iframe {
+        width: 80%;
+        /* Hace que el mapa ocupe todo el ancho disponible */
+        width: 340px;
+        /* Limita el ancho máximo del mapa */
+        height: 300px;
+        /* Establece una altura fija */
+        border: 0;
+        /* Elimina el borde del iframe */
+        border-radius: 8px;
+        /* Añade bordes redondeados */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        /* Añade sombra para darle un efecto de elevación */
+    }
+}
+
+@media screen and (max-width:400px) {
+    .mapa iframe {
+        width: 340px;
+        /* Limita el ancho máximo del mapa */
+        height: 200px;
+        /* Establece una altura fija */
+
+    }
+}
+
+/* ----------------- PIE DE PAGINA --------------------- */
+.pie-pagina {
+    width: 100%;
+    background-color: #0a141d;
+
+}
+
+.group-1 {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /*  Que se repita y que en las 3 columnas tenga el mismo ancho */
+    grid-gap: 50px;
+    padding: 35px 0;
+}
+
+.pie-pagina .group-1 .box figure {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie-pagina .group-1 .box figure img {
+    width: 350px;
+}
+
+.pie-pagina .group-1 .box h2 {
+    color: var(--blanco);
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.pie-pagina .group-1 .box p {
+    color: #efefef;
+    margin-bottom: 15px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3rem;
+}
+
+.pie-pagina .group-1 .box .red-social a {
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #ffffff;
+    margin-right: 10px;
+    background-color: #0d2033;
+    text-align: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.pie-pagina .group-1 .box .red-social a:hover {
+    color: aqua;
+}
+
+.pie-pagina .group-2 {
+    background-color: #0a1a2a;
+    padding: 10px 10px;
+    text-align: center;
+    color: #fff;
+}
+
+@media screen and (max-width: 800px) {
+    .pie-pagina .group-1 {
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        /*  Que se repita y que en las 3 columnas tenga el mismo ancho */
+        grid-gap: 30px;
+        padding: 35px 0;
+
+    }
+}
+
+/* ------------- LOGIN ----------------- */
+
+/* ::after,*::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.body2{
+    background-image: url('../assets/Cursos/login.jpg');
+    background-size:cover;
+}
+.Login{
+
+
+}
+.Login .form-box {
+width: 100%;
+padding: 40px;
+}
+
+.fondo{
+    width: 400px;
+    height: 535px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    background-color:rgba(0, 0, 0, 0.2);
+    border-radius: 2%;
+}
+.icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #162938;
+    font-size: 2em;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+
+}
+
+.Login form{
+    height: 540px;
+    width: 400px;
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    padding: 50px 35px;
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+}
+.Login form *{
+    color: white;
+    font-family: "Poppins", sans-serif;
+    letter-spacing: 0.5px;
+    outline: none;
+    border:none;
+    animation: none;
+}
+
+.Login form h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+.Login form label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.Login input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.173);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+} 
+.Login ::placeholder{
+    color: #e5e5e5;
+}
+.Login button{
+    margin-top: 30px !important;
+    width: 100%;
+    background-color: white;
+    padding: 15px 10px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #080710;
+    border-radius: 5px;
+}
+.Login .social{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 0 10px;
+    margin: 20px 0;
+    gap: 40px;
+}
+.Login .social .go{
+    background-color: rgba(255,255,255,0.173);
+    border-radius: 7px;
+    padding: 10px 10px;
+}
+.Login .social .go a{
+    text-decoration: none;
+}
+.Login .social .fb{
+    background-color: rgba(255,255,255,0.173);
+    border-radius: 7px;
+    padding: 10px 10px;
+}
+.Login .social .fb a{
+    text-decoration: none;
+}
+ */
